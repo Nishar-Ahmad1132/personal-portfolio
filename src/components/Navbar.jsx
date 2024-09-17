@@ -17,6 +17,7 @@ const Navbar = () => {
       <Link to="/" className="logo" onClick={handleHomeClick}>
         Nishar Ahmad
       </Link>
+
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={() => setIsMobile(false)}
@@ -89,6 +90,16 @@ const Navbar = () => {
           </Link>
         </li> */}
       </ul>
+
+      <a
+        href="http://34.227.148.51/"
+        className="blog-web-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fas fa-globe"></i>  Visit Blog
+      </a>
+
       <button
         className="mobile-menu-icon"
         onClick={() => setIsMobile(!isMobile)}

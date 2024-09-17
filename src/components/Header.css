@@ -1,4 +1,4 @@
-/* Main Header Styles */
+
 .header {
   display: flex;
   flex-direction: row;
@@ -9,16 +9,21 @@
   height: 80vh;
   position: relative;
   margin-top: 5rem;
+  overflow: hidden;
 }
 
 /* Container */
 .header-cont {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
+  padding: 0 .5rem;
+  box-sizing: border-box;
 }
 
 /* Content on the Left */
@@ -56,8 +61,9 @@
   margin-bottom: 1rem;
   font-weight: 400;
   color: #66fcf1;
-  animation: typing 5s steps(40, end), blink 0.75s steps(infinite) infinite;
-  animation-delay: 1s;
+  /* animation: typing 5s steps(40, end), blink 0.75s steps(infinite) infinite; */
+  /* animation-delay: 1s; */
+  display: block;
 }
 
 @keyframes typing {
@@ -70,10 +76,9 @@
   50% { border-color: #66fcf1; }
 }
 
-/* Call to Action Button */
 .cta-btn {
-  background-color: #66fcf1;
-  color: #0b0c10;
+  background-color: #0c302d;
+  color: white;
   padding: 0.8rem 2rem;
   border-radius: 30px;
   font-size: 1.2rem;
@@ -86,7 +91,6 @@
   transform: scale(1.05);
 }
 
-/* Profile Image Container */
 .header-image {
   width: 50%;
   display: flex;
@@ -95,17 +99,6 @@
   position: relative;
 }
 
-.header-image::before {
-  content: "";
-  position: absolute;
-  height: 350px;
-  width: 250px;
-  background: linear-gradient(135deg, #000000, #ffffff);
-  z-index: 1;
-  border-radius: 15px;
-  top: 30px;
-  left: 22px;
-}
 
 .header-image img {
   height: 350px;
@@ -114,49 +107,42 @@
   object-fit: cover;
   position: relative;
   z-index: 2; 
-  box-shadow: -15px -15px 30px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+  
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-  /* Header adjustments */
   .header {
     padding: 50px 20px;
     height: auto;
     margin-top: 3rem;
   }
 
-  /* Stack elements vertically */
   .header-cont {
     flex-direction: column;
     text-align: center;
     gap: 20px;
   }
 
-  /* Adjust content width */
   .header-content {
     width: 100%;
     padding: 0;
   }
 
-  /* Adjust heading font size for smaller screens */
   .header-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
 
-  /* Adjust intro text font size */
   .header-intro {
     font-size: 1.4rem;
   }
 
-  /* Adjust description font size */
   .header-description {
     font-size: 1rem;
     padding: 0 0.5rem 1.5rem;
   }
 
-  /* Center button and adjust width */
   .cta-btn {
     width: 70%;
     align-self: center;
@@ -166,18 +152,6 @@
 .header-image {
   width: 100%;
   margin-top: 2rem;
-}
-
-.header-image::before {
-  content: "";
-  position: absolute;
-  height: 250px;
-  width: 150px;
-  background: linear-gradient(135deg, #000000, #ffffff);
-  z-index: 1;
-  border-radius: 15px;
-  top: -10px;
-  left: 100px;
 }
 
 .header-image img {
@@ -192,7 +166,6 @@
 }
 
 @media (max-width: 480px) {
-  /* For very small screens */
   .header-content h1 {
     font-size: 2rem;
   }

@@ -1,9 +1,9 @@
-// src/components/Header.js
 import React, { useEffect, useState } from "react";
-import hero_img from "../assets/Aa8.jpg";
+import hero_img from "../assets/Na5.jpeg";
 import "./Header.css";
+import { toast } from "react-toastify";
 
-const fileUrl = "/Nishar_Ahmad_Resume.pdf";
+const fileUrl = process.env.PUBLIC_URL + "/Nishar_Ahmad_Resume.pdf";
 
 const Header = () => {
   const [text, setText] = useState("");
@@ -15,14 +15,29 @@ const Header = () => {
       setText(fullText.slice(0, index + 1));
       index += 1;
       if (index === fullText.length) {
-        clearInterval(interval);
+        setTimeout(() => {
+          setText("MERN");
+          index = 3;
+        }, 3000);
       }
     }, 100);
     return () => clearInterval(interval);
   }, []);
 
   const openFileInNewTab = (url) => {
-    window.open(url, "_blank");
+    toast.success(
+      "Please fill contact form in contact section, I will send you.",
+      {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      }
+    );
   };
 
   return (
@@ -44,7 +59,6 @@ const Header = () => {
             >
               Download Resume
             </button>
-            
           </div>
         </div>
         <div className="header-image">

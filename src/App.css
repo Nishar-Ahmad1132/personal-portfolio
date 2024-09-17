@@ -6,11 +6,12 @@
 
 body {
   overflow-x: hidden;
-  background: linear-gradient(135deg, #000000, #222222);
+  /* background: linear-gradient(135deg, #000000, #222222); */
   height: 100%;
   width: 100%;
   margin: 0;
   font-family: 'Arial', sans-serif;
+  background-color: rgb(33, 32, 32);
 }
 
 html, body, #root {

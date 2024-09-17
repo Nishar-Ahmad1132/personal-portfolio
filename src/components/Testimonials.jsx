@@ -1,26 +1,27 @@
 import React from "react";
 import "./Testimonials.css";
-import photo from "../assets/Aa8.jpg"
+import photo from "../assets/Na3.jpeg"
+
 
 const testimonialsData = [
   {
-    text: "Ahmad is a great developer!Ahmad is a great developer!Ahmad is a great developer!",
-    name: "Client Name",
+    text: "A dedicated developer with a keen eye for detail, consistently delivering high-quality code and creative solutions.",
+    name: "Tech Enthusiast",
     photo: photo,
   },
   {
-    text: "Fantastic work on the project!",
-    name: "Another Client",
+    text: "Their commitment to learning and improving is truly impressive. Always willing to tackle new challenges with enthusiasm.",
+    name: "Peer Developer",
+    photo: photo, 
+  },
+  {
+    text: "An up-and-coming talent in the tech world, demonstrating excellent problem-solving skills and technical expertise.",
+    name: "Industry Observer",
     photo: photo,
   },
   {
-    text: "Highly recommend Ahmad for any development needs!",
-    name: "Satisfied Client",
-    photo: photo,
-  },
-  {
-    text: "Ahmad is a great developer!",
-    name: "Client Name",
+    text: "A promising developer with a strong foundation in modern technologies and a drive to succeed in every project.",
+    name: "Mentor",
     photo: photo,
   },
 ];

@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #141414;
   padding: 0 2rem;
@@ -73,14 +73,24 @@
 /* Mobile Menu */
 .mobile-menu-icon {
   display: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   background: none;
   border: none;
   cursor: pointer;
+  padding-right: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
+
+  .navbar{
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1rem;
+    padding-left: 0;
+  }
   .nav-links {
     display: none;
   }
@@ -120,5 +130,66 @@
 
   .active-tab::after {
     display: none;
+  }
+}
+
+
+/* Blog Button Styling */
+.blog-web-btn {
+  border: 2px solid #447774;
+  background: none;
+  color: #66fcf1;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.blog-web-btn i {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.blog-web-btn:hover {
+  background-color: #447774;
+  color: #141414;
+  transform: scale(1.1);
+}
+
+.blog-web-btn:hover i {
+  color: #141414;
+}
+
+.blog-web-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 252, 241, 0.7);
+}
+
+.blog-web-btn:active {
+  transform: scale(1);
+  background-color: #5ce7e1;
+}
+
+@media (max-width: 768px) {
+  .blog-web-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .blog-web-btn i {
+    font-size: 1rem;
   }
 }

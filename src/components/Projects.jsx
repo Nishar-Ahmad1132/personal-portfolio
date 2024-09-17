@@ -1,13 +1,15 @@
+/* eslint-disable no-unused-vars */
+
+
 import React, { useState } from "react";
-import { FaGithub } from "react-icons/fa"; // Importing the GitHub icon
+import { FaGithub } from "react-icons/fa";
 import "./Projects.css";
 import proj1 from "../assets/webD1.jpg";
 import proj2 from "../assets/webD2.jpg";
-import proj3 from "../assets/projectImage.jpg";
 import proj4 from "../assets/appD.jpg";
 import lockboot from "../assets/lockboot.png";
 
-// Sample project data with different categories
+
 const projects = [
   {
     name: "Portfolio Website",
@@ -17,7 +19,7 @@ const projects = [
     rating: "4.7/5",
     date: "05 March, 2024",
     creator: "Nishar Ahmad",
-    link: "https://github.com/Nishar-Ahmad1132/ahmad-blog",
+    link: "https://github.com/Nishar-Ahmad1132/personal-portfolio",
   },
   {
     name: "Ahmad's Blog",
@@ -37,7 +39,7 @@ const projects = [
     rating: "3.5/5",
     date: "29 May, 2024",
     creator: "Nishar Ahmad",
-    link: "https://github.com/Nishar-Ahmad1132/ahmad-blog",
+    link: "https://github.com/Nishar-Ahmad1132/bot_ai",
   },
   {
     name: "lockbot",
@@ -47,7 +49,7 @@ const projects = [
     rating: "4.5/5",
     date: "13 May, 2024",
     creator: "Nishar Ahmad",
-    link: "https://github.com/Nishar-Ahmad1132/ahmad-blog",
+    link: "https://github.com/Nishar-Ahmad1132/lockboot",
   },
   {
     name: "Expense Tracker",
@@ -57,37 +59,25 @@ const projects = [
     rating: "4.1/5",
     date: "10 July, 2024",
     creator: "Nishar Ahmad",
-    link: "https://github.com/Nishar-Ahmad1132/ahmad-blog",
+    link: "https://github.com/Nishar-Ahmad1132/expenses_tracker",
   },
   {
-    name: "E-Commerce Platform",
-    image: proj3,
-    description:
-      "E-commerce website using React, Node.js, and Stripe integration.",
-    category: "Web Development",
-    rating: "4.2/5",
-    date: "01 February, 2024",
-    creator: "Nishar Ahmad",
-    link: "https://github.com/Nishar-Ahmad1132/ahmad-blog",
-  },
-  {
-    name: "Social Media App",
+    name: "WnatsChat App",
     image: proj4,
     description: "Mobile app allowing users to connect and share posts.",
     category: "App",
     rating: "4.3/5",
     date: "15 June, 2024",
     creator: "Nishar Ahmad",
-    link: "https://github.com/Nishar-Ahmad1132/ahmad-blog",
+    link: "",
   },
 ];
 
 const Projects = () => {
   const [selectedTab, setSelectedTab] = useState("Latest Projects");
 
-  // Function to filter projects based on the selected tab
   const filteredProjects = projects.filter((project) => {
-    if (selectedTab === "Latest Projects") return true; // Show all for "Latest Projects"
+    if (selectedTab === "Latest Projects") return true;
     if (selectedTab === "Apps Projects") return project.category === "App";
     if (selectedTab === "Web Projects")
       return project.category === "Web Development";
@@ -123,23 +113,29 @@ const Projects = () => {
               </div>
               <div className="project-name">{project.name}</div>
               <div className="project-footer">
-                <div className="project-rating">⭐{project.rating}</div>
-                <div className="project-date">{project.date}</div>
+                {/* <div className="project-rating">⭐{project.rating}</div>
+                <div className="project-date">{project.date}</div> */}
               </div>
               <div className="project-overlay">
                 <div className="project-details">
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                   <div className="source-code">
-                    <p>Click below to see the source code of the project.</p>
-                    <a
-                      className="view-more"
-                      href={project.link}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <FaGithub size={30} />
-                    </a>
+                    {project.link ? (
+                      <>
+                        <p>Click below to see the source code of the project.</p>
+                        <a
+                          className="view-more"
+                          href={project.link}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <FaGithub size={30} />
+                        </a>
+                      </>
+                    ) : (
+                      <p>No source code available.</p>
+                    )}
                   </div>
                   <p>Created by: {project.creator}</p>
                 </div>

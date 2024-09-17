@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./About.css";
 import Aside from "./About_aside";
@@ -20,7 +19,7 @@ const About = () => {
                 latest technologies.
               </p>
             </div>
-            <hr className="separator"/>
+            <hr className="separator" />
             <div className="about-text">
               <h2>My Development Approach</h2>
               <p>
